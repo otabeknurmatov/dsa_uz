@@ -1,6 +1,6 @@
 <div align=center>
     <a href="https://github.com/otabeknurmatov/dsa_uz"><img src="./Images/logo.png" width="90px"></a>
-    <h1 align=center><b>DSA.UZ</b></h1>
+    <h1 align=center><b>DSA.UZ </b></h1>
 </div>
 
 <p align=center style="font-size: 8px; color : #444">"Ma'lumotlar strukturasi va Algoritmlar" mavzusidagi tasavvurga boy va o'zbek tilidagi qo'llanma!</p>
@@ -14,9 +14,24 @@ Loihani yozishda biz asosan 3ta "princple"ga amal qildik.
 2. **Imagine** - `X`ni qanday ishlashini illustratsiyalar bilan tushuntirish.
 3. **How** - `X`ni dasturlash tilida kod orqali qanday ifoda qilish mumkinligi
 
-Qo'llanmada ba'zi xatoliklarga yo'l qo'ygan bo'lishimiz mumkin. Shuni inobatga olib aytishim kerakki agarda xatolik topsangiz Issues bo'limida xatolik qayerdaligini aytib keting. Agar loihani qo'llab quvatlamoqchi bo'lsangiz, biz contribute uchun ochiqmiz va pull requestlarni loyiq deb topsak uni qabul qilamiz. Taklif va xatoliklarni Issues bo'limida **New Issue** orqali berib ketishingiz mumkin. Oldindan Rahmat 😊
+Qo'llanmada ba'zi xatoliklarga yo'l qo'ygan bo'lishimiz mumkin. Shuni inobatga olib aytishim kerakki agarda xatolik topsangiz Issues bo'limida xatolik qayerdaligini aytib keting. 
+
+Agar loihani qo'llab quvatlamoqchi bo'lsangiz, biz contribute uchun ochiqmiz va pull requestlarni loyiq deb topsak uni qabul qilamiz. Taklif va xatoliklarni Issues bo'limida **New Issue** orqali berib ketishingiz mumkin. Oldindan Rahmat 😊
 
 Unday bo'lsa boshladik 🚀!
+
+<h2 align=center><b>Dasturlash tili</b></h2>
+
+Ushbu dokumentatsiyada Go dasturlash tili ishlatilgan. Siz o'zingizga qulay dasturlash tilini pastdagi ro'yxatdan tanlashingiz mumkin:
+
+1. [C]()
+2. [C++]()
+3. [C#]()
+4. [Rust]()
+5. [Java]()
+6. [Swift]()
+7. [Go]()
+8. [JavaScript]()
 
 <h2 align=center><b>Mavzular</b></h2>
 
@@ -32,13 +47,13 @@ Unday bo'lsa boshladik 🚀!
     - [Hash Table](#)
     - [Hash Table](#)
 3. [Algorithms](./03.Algorithms/Doc.md)
-    - [Algorithmic Paradigms]()
-    - [Sorting]()
-    - [Searching]()
-    - [Graph Algorithms]()
-    - [Greedy Algorithms]()
-    - [Dynamic Programming]()
-    - [Divide and Conquer]()
+    - [Algorithmic Paradigms](#)
+    - [Sorting](#)
+    - [Searching](#)
+    - [Graph Algorithms](#)
+    - [Greedy Algorithms](#)
+    - [Dynamic Programming](#)
+    - [Divide and Conquer](#)
 
 Agar sizda hech qanday DSA bo'yicha tajriba yoki ko'nikma bo'lmasa, mavzularni ketma-ketlikda o'rganishni tavsiya qilamiz. Agar sizda bu ko'nikmalar bo'lsa unda o'zingizga qulay mavzuni tanlab o'sha mavzudagi darslarimizdan foydalanishingiz mumkin.
 
