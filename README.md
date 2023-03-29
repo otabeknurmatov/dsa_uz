@@ -24,14 +24,14 @@ Unday bo'lsa boshladik 🚀!
 
 Ushbu dokumentatsiyada C++ dasturlash tili ishlatilgan. Siz o'zingizga qulay dasturlash tilini pastdagi ro'yxatdan tanlashingiz mumkin:
 
-1. [C]()
-2. [C++]()
-3. [C#]()
-4. [Rust]()
-5. [Java]()
-6. [Swift]()
-7. [Go]()
-8. [JavaScript]()
+1. [C](https://github.com/otabeknurmatov/dsa_uz/tree/c)
+2. [Python](https://github.com/otabeknurmatov/dsa_uz)
+3. [C#](https://github.com/otabeknurmatov/dsa_uz/tree/csh)
+4. [Rust](https://github.com/otabeknurmatov/dsa_uz/tree/rust)
+5. [Java](https://github.com/otabeknurmatov/dsa_uz/tree/java)
+6. [Swift](https://github.com/otabeknurmatov/dsa_uz/tree/swift)
+7. [Go](https://github.com/otabeknurmatov/dsa_uz/tree/go)
+8. [JavaScript](https://github.com/otabeknurmatov/dsa_uz/tree/js)
 
 <h2 align=center><b>Mavzular</b></h2>
 
