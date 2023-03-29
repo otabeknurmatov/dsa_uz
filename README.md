@@ -22,7 +22,7 @@ Unday bo'lsa boshladik 🚀!
 
 <h2 align=center><b>Dasturlash tili</b></h2>
 
-Ushbu dokumentatsiyada Go dasturlash tili ishlatilgan. Siz o'zingizga qulay dasturlash tilini pastdagi ro'yxatdan tanlashingiz mumkin:
+Ushbu dokumentatsiyada **Go** dasturlash tili ishlatilgan. Siz o'zingizga qulay dasturlash tilini pastdagi ro'yxatdan tanlashingiz mumkin:
 
 1. [C]()
 2. [C++]()
