@@ -22,7 +22,7 @@ Unday bo'lsa boshladik 🚀!
 
 <h2 align=center><b>Dasturlash tili</b></h2>
 
-Ushbu dokumentatsiyada C++ dasturlash tili ishlatilgan. Siz o'zingizga qulay dasturlash tilini pastdagi ro'yxatdan tanlashingiz mumkin:
+Ushbu dokumentatsiyada **C++** dasturlash tili ishlatilgan. Siz o'zingizga qulay dasturlash tilini pastdagi ro'yxatdan tanlashingiz mumkin:
 
 1. [C](https://github.com/otabeknurmatov/dsa_uz/tree/c)
 2. [Python](https://github.com/otabeknurmatov/dsa_uz)
