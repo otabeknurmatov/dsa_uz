@@ -87,12 +87,6 @@ import "fmt"
 func access_element(arr []interface{}, index int) interface{} {
     return arr[index]
 }
-
-func main() {
-    arr := []interface{}{1, 2, 3, 4, 5}
-    index := 2
-    fmt.Println(access_element(arr, index))
-}
 ```
 
 Yuqorida keltirilgan kodda bizning `access_element` funksyamizga istalgan kattalikda input bermaylik u bu ishni qilishga bir xil vaqt sarflaydi. Ya'ni operatsiyalar soni bu yerda 1ta. 
@@ -104,11 +98,6 @@ import "fmt"
 
 func sum_of_squares(n int) int {
     return (n * (n + 1) * (2 * n + 1)) / 6
-}
-
-func main() {
-    n := 5
-    fmt.Println(sum_of_squares(n))
 }
 ```
 
@@ -134,11 +123,6 @@ func summing(numbers []int) int {
     }
     return result
 }
-
-func main() {
-    numbers := []int{1, 2, 3, 4, 5}
-    fmt.Println(summing(numbers))
-}
 ```
 
 Yuqoridagi kodda tasvirlanganidek biz `result` degan o'zgaruvchi ochib uni 0ga tenglashtirdik. Va keyin for loop orqali, funksiyaga beriladigan list qiymatini iteratsiya qilamiz. Iteratsiya har bir raqamni `result` o'zgaruvchisizga increment qilib borayabdi va oxirida esa uni qaytarayabdi. 
@@ -163,11 +147,6 @@ func numered_num(num int) {
         }
     }
 }
-
-func main() {
-    num := 3
-    numered_num(num)
-}
 ```
 
 Yuqorida keltirilgan kodda nested-loop tasvirlangan. Biz funksiyaga necha qiymatni bersak u o'sha qiymatni kvadratichalik ko'p operatsiya bajaradi. Agar biz unga 2 ni kiritsak u 4 ta operatsiya qiladi, agar 5 ni kiritsak u 25 ta operatsiya bajaradi. Demak biz uni <code>O(n<sup>2</sup>)</code> 
@@ -190,11 +169,6 @@ func summing(nums []int) int {
     }
     return result
 }
-
-func main() {
-    nums := []int{1, 2, 3, 4, 5}
-    fmt.Println(summing(nums))
-}
 ```
 
 Yuqorida keltirilgan kodning **space complexity**si `O(1)`. Sababi bizning funksiyamiz 100 ta elementli listga ham 1 000 000 000 elementli listga ham bir xil ishlaydi. Operatsiyalar soni ko'p bo'lgani bilan biz barchasini faqat bitta `result` degan o'zgaruvchiga saqlayabmiz.
@@ -214,12 +188,6 @@ func sum_odds_evens(nums []int) string {
         }
     }
     return fmt.Sprintf("odds = %d, evens = %d", odds, evens)
-}
-
-func main() {
-    nums := []int{1, 2, 3, 4, 5, 6}
-    result := sum_odds_evens(nums)
-    fmt.Println(result)
 }
 ```
 
@@ -243,31 +211,12 @@ func count_frequency(nums []int) map[int]int {
     }
     return freq_dict
 }
-
-func print_dict(dict map[int]int) {
-    fmt.Print("{ ")
-    i := 0
-    for key, value := range dict {
-        fmt.Printf("%d: %d", key, value)
-        if i < len(dict)-1 {
-            fmt.Print(", ")
-        }
-        i++
-    }
-    fmt.Println(" }")
-}
-
-func main() {
-    arr := []int{1, 2, 2, 3, 3, 3}
-    freq_dict := count_frequency(arr)
-    print_dict(freq_dict)
-}
 ```
 
 Bu funksiya berilgan list ichida takrorlangan elementlar sonini sanaydi. Keling pastda qiymat berib ko'ramiz va berilgan qiymatga u qanday javob berishini Output orqali ifodalaymiz.
 
 ```go
-count_frequency(["apple", "banana", "apple", "orange", "apple"])
+// Input: ["apple", "banana", "apple", "orange", "apple"]
 
 // Output: {'apple': 3, 'banana': 1, 'orange': 1}
 ```
@@ -292,24 +241,12 @@ func generate_pairs(arr []int) []struct{first, second int} {
     }
     return pairs
 }
-
-func print_pairs(pairs []struct{first, second int}) {
-    for _, pair := range pairs {
-        fmt.Printf("(%d, %d)\n", pair.first, pair.second)
-    }
-}
-
-func main() {
-    arr := []int{1, 2, 3}
-    pairs := generate_pairs(arr)
-    print_pairs(pairs)
-}
 ```
 
 Yuqoridagi funksiya list ichidagi har bir elementni sherik qilib `pairs` degan yangi listga qo'shib boradi.
 
 ```go
-generate_pairs([1, 2, 3])
+// Input: [1, 2, 3]
 
 // Output: [(3, 3), (3, 6), (3, 9), (6, 3), (6, 6), (6, 9), (9, 3), (9, 6), (9, 9)]
 ```
