@@ -37,7 +37,6 @@ Qachonki biz algoritmlarni tahlil qilganimizda, qancha kattalikdagi qiymatga <i>
 
 Tasavvur qiling, bizni algoritm berilgan **array**dagi qiymatlardan faqat juft sonlarni yangi arrayga qo'shib, oxirida o'sha **array**ni qaytarishi kerak.
 
-**C++**
 ```cpp
 #include <iostream>
 #include <vector>
@@ -91,13 +90,6 @@ template<typename T>
 T access_element(std::vector<T> arr, int index) {
     return arr[index];
 }
-
-int main() {
-    std::vector<int> arr = {1, 2, 3, 4, 5};
-    int index = 2;
-    std::cout << access_element(arr, index) << std::endl;
-    return 0;
-}
 ```
 
 Yuqorida keltirilgan kodda bizning `access_element` funksyamizga istalgan kattalikda input bermaylik u bu ishni qilishga bir xil vaqt sarflaydi. Ya'ni operatsiyalar soni bu yerda 1ta. 
@@ -107,12 +99,6 @@ Yuqorida keltirilgan kodda bizning `access_element` funksyamizga istalgan kattal
 
 int sum_of_squares(int n) {
     return (n * (n + 1) * (2 * n + 1)) / 6;
-}
-
-int main() {
-    int n = 5;
-    std::cout << sum_of_squares(n) << std::endl;
-    return 0;
 }
 ```
 
@@ -137,12 +123,6 @@ int summing(std::vector<int> numbers) {
     }
     return result;
 }
-
-int main() {
-    std::vector<int> numbers = {1, 2, 3, 4, 5};
-    std::cout << summing(numbers) << std::endl;
-    return 0;
-}
 ```
 
 Yuqoridagi kodda tasvirlanganidek biz `result` degan o'zgaruvchi ochib uni 0ga tenglashtirdik. Va keyin for loop orqali, funksiyaga beriladigan list qiymatini iteratsiya qilamiz. Iteratsiya har bir raqamni `result` o'zgaruvchisizga increment qilib borayabdi va oxirida esa uni qaytarayabdi. 
@@ -165,12 +145,6 @@ void numered_num(int num) {
         }
     }
 }
-
-int main() {
-    int num = 3;
-    numered_num(num);
-    return 0;
-}
 ```
 
 Yuqorida keltirilgan kodda nested-loop tasvirlangan. Biz funksiyaga necha qiymatni bersak u o'sha qiymatni kvadratichalik ko'p operatsiya bajaradi. Agar biz unga 2 ni kiritsak u 4 ta operatsiya qiladi, agar 5 ni kiritsak u 25 ta operatsiya bajaradi. Demak biz uni <code>O(n<sup>2</sup>)</code> 
@@ -192,12 +166,6 @@ int summing(std::vector<int> nums) {
     }
     return result;
 }
-
-int main() {
-    std::vector<int> nums = {1, 2, 3, 4, 5};
-    std::cout << summing(nums) << std::endl;
-    return 0;
-}
 ```
 
 Yuqorida keltirilgan kodning **space complexity**si `O(1)`. Sababi bizning funksiyamiz 100 ta elementli listga ham 1 000 000 000 elementli listga ham bir xil ishlaydi. Operatsiyalar soni ko'p bo'lgani bilan biz barchasini faqat bitta `result` degan o'zgaruvchiga saqlayabmiz.
@@ -217,12 +185,6 @@ void sum_odds_evens(std::vector<int> nums) {
         }
     }
     std::cout << "odds = " << odds << ", evens = " << evens << std::endl;
-}
-
-int main() {
-    std::vector<int> nums = {1, 2, 3, 4, 5};
-    sum_odds_evens(nums);
-    return 0;
 }
 ```
 
@@ -244,30 +206,12 @@ std::unordered_map<int, int> count_frequency(std::vector<int> arr) {
     }
     return freq_dict;
 }
-
-void print_dict(std::unordered_map<int, int> dict) {
-    std::cout << "{ ";
-    for (auto it = dict.begin(); it != dict.end(); it++) {
-        std::cout << it->first << ": " << it->second;
-        if (std::next(it) != dict.end()) {
-            std::cout << ", ";
-        }
-    }
-    std::cout << " }\n";
-}
-
-int main() {
-    std::vector<int> arr = {1, 2, 2, 3, 3, 3};
-    std::unordered_map<int, int> freq_dict = count_frequency(arr);
-    print_dict(freq_dict);
-    return 0;
-}
 ```
 
 Bu funksiya berilgan list ichida takrorlangan elementlar sonini sanaydi. Keling pastda qiymat berib ko'ramiz va berilgan qiymatga u qanday javob berishini Output orqali ifodalaymiz.
 
 ```cpp
-count_frequency(["apple", "banana", "apple", "orange", "apple"])
+// Input: ["apple", "banana", "apple", "orange", "apple"]
 
 // Output: {'apple': 3, 'banana': 1, 'orange': 1}
 ```
@@ -292,21 +236,12 @@ std::vector<std::pair<int, int>> generate_pairs(std::vector<int> arr) {
     }
     return pairs;
 }
-
-int main() {
-    std::vector<int> arr = {1, 2, 3};
-    std::vector<std::pair<int, int>> pairs = generate_pairs(arr);
-    for (auto p : pairs) {
-        std::cout << "(" << p.first << ", " << p.second << ")" << std::endl;
-    }
-    return 0;
-}
 ```
 
 Yuqoridagi funksiya list ichidagi har bir elementni sherik qilib `pairs` degan yangi listga qo'shib boradi.
 
 ```cpp
-generate_pairs([1, 2, 3])
+// Input: [1, 2, 3]
 
 // Output: [(3, 3), (3, 6), (3, 9), (6, 3), (6, 6), (6, 9), (9, 3), (9, 6), (9, 9)]
 ```
