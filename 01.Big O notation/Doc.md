@@ -37,107 +37,6 @@ Qachonki biz algoritmlarni tahlil qilganimizda, qancha kattalikdagi qiymatga <i>
 
 Tasavvur qiling, bizni algoritm berilgan **array**dagi qiymatlardan faqat juft sonlarni yangi arrayga qo'shib, oxirida o'sha **array**ni qaytarishi kerak.
 
-**Python**
-```python
-def juftlar(arry : list[int]) -> list:
-    result = []
-    for num in arry:
-        if num % 2 == 0:
-            result.append(num)
-    return result
-```
-
-**JavaScript**
-```javascript
-function juftlar(arry) {
-    let result = []
-    for (let num of arry) {
-        if (num % 2 == 0) {
-            result.push(num);
-        }
-    }
-    return result;
-}
-```
-
-**Java**
-```java
-import java.util.ArrayList;
-import java.util.List;
-
-public class Juftlar {
-    public static List<Integer> juftlar(List<Integer> arry) {
-        List<Integer> result = new ArrayList<>();
-        for (int num : arry) {
-            if (num % 2 == 0) {
-                result.add(num);
-            }
-        }
-        return result;
-    }
-}
-```
-
-**C**
-```c
-#include <stdio.h>
-
-int* juftlar(int arry[], int n, int* result_size) {
-    int* result = malloc(n * sizeof(int));
-    *result_size = 0;
-    for (int i = 0; i < n; i++) {
-        if (arry[i] % 2 == 0) {
-            result[*result_size] = arry[i];
-            (*result_size)++;
-        }
-    }
-    return result;
-}
-```
-
-**C++**
-```cpp
-#include <iostream>
-#include <vector>
-
-std::vector<int> juftlar(std::vector<int> arry) {
-    std::vector<int> result;
-    for (int num : arry) {
-        if (num % 2 == 0) {
-            result.push_back(num);
-        }
-    }
-    return result;
-}
-```
-
-**Rust**
-```rust
-fn juftlar(arry: &[i32]) -> Vec<i32> {
-    let mut result = Vec::new();
-    for &num in arry {
-        if num % 2 == 0 {
-            result.push(num);
-        }
-    }
-    result
-}
-```
-
-**Swift**
-```swift
-func juftlar(_ arry: [Int]) -> [Int] {
-    var result = [Int]()
-    for num in arry {
-        if num % 2 == 0 {
-            result.append(num)
-        }
-    }
-    return result
-}
-```
-
-**Go**
 ```go
 func juftlar(arry []int) []int {
     var result []int
@@ -180,16 +79,37 @@ O'lchov birliklari juda ko'p. Ularni ba'zilarini hozir ushbu qo'llanma davomida 
 
 Constant - o'zgarmas degan ma'noni anglatadi. Matematikada konstant qiymat nimada bor desa men `pi ≈ 3.14159` ni ayta olaman. Biz constant qiymatni Big O da `O(1)` deb o'lchaymiz. Nima uchun aynan 1 soni keltirilganini tushuntirishga menimcha xojat yo'q chunki qiymat **bir**xil qolishi aytilayabdi. Kelin endi misol bilan ko'rsak
 
-```python
-def access_element(arr : list, index : int) -> any:
+```go
+package main
+
+import "fmt"
+
+func access_element(arr []interface{}, index int) interface{} {
     return arr[index]
+}
+
+func main() {
+    arr := []interface{}{1, 2, 3, 4, 5}
+    index := 2
+    fmt.Println(access_element(arr, index))
+}
 ```
 
 Yuqorida keltirilgan kodda bizning `access_element` funksyamizga istalgan kattalikda input bermaylik u bu ishni qilishga bir xil vaqt sarflaydi. Ya'ni operatsiyalar soni bu yerda 1ta. 
 
-```python
-def sum_of_squares(n : int) -> int:
-    return (n * (n + 1) * (2 * n + 1)) // 6
+```go
+package main
+
+import "fmt"
+
+func sum_of_squares(n int) int {
+    return (n * (n + 1) * (2 * n + 1)) / 6
+}
+
+func main() {
+    n := 5
+    fmt.Println(sum_of_squares(n))
+}
 ```
 
 Bu ham huddi shunday istalgan xajmdagi qiymat bermaylik operatsiyalar soni oshmaydi ya'ni doim bitta operatsiya amalga oshiradi. Shuning uchun ham uni **worst case**da `O(1)` deb o'lchaymiz. 
@@ -202,12 +122,23 @@ Linear - Chiziqli degan ma'noni anglatadi. Tasavvur qiling oldingizda 100ta xona
 
 Eng ko'pi bilan siz 100ta xonani barchasini ochishingizga to'g'ri keladi. Ko'rib turibsizki omadingiz bo'lsa uni 1tada ham topishingiz mumkin. Agar unday bo'lmasa demak 100ta eshikni ham ochib ko'rasiz. Bir narsani yana eslatib o'taman biz Big O notation bilan faqat **worst case** holatini tahlil qilamiz. Kelin endi kod bilan ko'radigan bo'lsak.
 
-```python
-def summing(numbers : list) -> int:
-    result = 0
-    for num in numbers:
+```go
+package main
+
+import "fmt"
+
+func summing(numbers []int) int {
+    result := 0
+    for _, num := range numbers {
         result += num
+    }
     return result
+}
+
+func main() {
+    numbers := []int{1, 2, 3, 4, 5}
+    fmt.Println(summing(numbers))
+}
 ```
 
 Yuqoridagi kodda tasvirlanganidek biz `result` degan o'zgaruvchi ochib uni 0ga tenglashtirdik. Va keyin for loop orqali, funksiyaga beriladigan list qiymatini iteratsiya qilamiz. Iteratsiya har bir raqamni `result` o'zgaruvchisizga increment qilib borayabdi va oxirida esa uni qaytarayabdi. 
@@ -220,11 +151,23 @@ Demak bu yerda operatsiyalar soni bevosita funksiyaga beriladigan listning hajmi
 
 Quadratic - Kvadrat darajali degan ma'noni anglatadi. Tasavvur qiling ishxonada ho'jayiningiz sizga "Xonani 2 marta tekshiring" desa siz 4 marta tekshirasiz, "4 marta tekshiring" desa siz 16 marta tekshirasiz. Mana shu jarayon aynan quadratic deb atasak bo'ladi.
 
-```python
-def numered_num(num : int) -> None:
-    for i in range(num):
-        for j in range(num):
-            print(f"{i}.{j}")
+```go
+package main
+
+import "fmt"
+
+func numered_num(num int) {
+    for i := 0; i < num; i++ {
+        for j := 0; j < num; j++ {
+            fmt.Printf("%d.%d\n", i, j)
+        }
+    }
+}
+
+func main() {
+    num := 3
+    numered_num(num)
+}
 ```
 
 Yuqorida keltirilgan kodda nested-loop tasvirlangan. Biz funksiyaga necha qiymatni bersak u o'sha qiymatni kvadratichalik ko'p operatsiya bajaradi. Agar biz unga 2 ni kiritsak u 4 ta operatsiya qiladi, agar 5 ni kiritsak u 25 ta operatsiya bajaradi. Demak biz uni <code>O(n<sup>2</sup>)</code> 
@@ -235,26 +178,49 @@ Yuqorida keltirilgan kodda nested-loop tasvirlangan. Biz funksiyaga necha qiymat
 
 ### **Constant Space**
 
-```python
-def summing(nums : list) -> int:
-    result = 0
-    for i in nums:
-        result += i
+```go
+package main
+
+import "fmt"
+
+func summing(nums []int) int {
+    result := 0
+    for _, num := range nums {
+        result += num
+    }
     return result
+}
+
+func main() {
+    nums := []int{1, 2, 3, 4, 5}
+    fmt.Println(summing(nums))
+}
 ```
 
 Yuqorida keltirilgan kodning **space complexity**si `O(1)`. Sababi bizning funksiyamiz 100 ta elementli listga ham 1 000 000 000 elementli listga ham bir xil ishlaydi. Operatsiyalar soni ko'p bo'lgani bilan biz barchasini faqat bitta `result` degan o'zgaruvchiga saqlayabmiz.
 
-```python
-def sum_odds_evens(nums : list) -> str:
-    odds = 0
-    evens = 0
-    for i in nums:
-        if i % 2 == 0:
-            evens += i
-        else:
-            odds += i
-    return f"odds = {odds}, evens = {evens}"
+```go
+package main
+
+import "fmt"
+
+func sum_odds_evens(nums []int) string {
+    odds, evens := 0, 0
+    for _, num := range nums {
+        if num % 2 == 0 {
+            evens += num
+        } else {
+            odds += num
+        }
+    }
+    return fmt.Sprintf("odds = %d, evens = %d", odds, evens)
+}
+
+func main() {
+    nums := []int{1, 2, 3, 4, 5, 6}
+    result := sum_odds_evens(nums)
+    fmt.Println(result)
+}
 ```
 
 Mana bu kodda ham **Space Complexity** `O(1)`ga teng. Chunki bizda funksiya boshlanishida ham tugashida ham faqat 2ta o'zgaruvchi qolayabdi. Ya'ni funksiyamiz yangi o'zgaruvchilar ochmayabdi, faqat bor o'zgaruvchilarni qiymati o'zgarayabdi. Demak agar funksiyangizdagi o'zgaruvchilar soni oshmasa.
@@ -263,25 +229,47 @@ Mana bu kodda ham **Space Complexity** `O(1)`ga teng. Chunki bizda funksiya bosh
 
 ### **Linear Space**
 
-```python
-def count_frequency(arr : list) -> dict:
-    freq_dict = {}
-    
-    for elem in arr:
-        if elem not in freq_dict:
-            freq_dict[elem] = 0
-            
-        freq_dict[elem] += 1
-        
+```go
+package main
+
+import (
+    "fmt"
+)
+
+func count_frequency(nums []int) map[int]int {
+    freq_dict := make(map[int]int)
+    for _, num := range nums {
+        freq_dict[num]++
+    }
     return freq_dict
+}
+
+func print_dict(dict map[int]int) {
+    fmt.Print("{ ")
+    i := 0
+    for key, value := range dict {
+        fmt.Printf("%d: %d", key, value)
+        if i < len(dict)-1 {
+            fmt.Print(", ")
+        }
+        i++
+    }
+    fmt.Println(" }")
+}
+
+func main() {
+    arr := []int{1, 2, 2, 3, 3, 3}
+    freq_dict := count_frequency(arr)
+    print_dict(freq_dict)
+}
 ```
 
 Bu funksiya berilgan list ichida takrorlangan elementlar sonini sanaydi. Keling pastda qiymat berib ko'ramiz va berilgan qiymatga u qanday javob berishini Output orqali ifodalaymiz.
 
-```python
+```go
 count_frequency(["apple", "banana", "apple", "orange", "apple"])
 
-# Output: {'apple': 3, 'banana': 1, 'orange': 1}
+// Output: {'apple': 3, 'banana': 1, 'orange': 1}
 ```
 
 Yuqorida ko'rib turganingizdek array ichida takrorlanmaydigan so'zlar bo'lsa **worst case**da bizning funksiyamizni **Space Complexity**si `O(n)` ni tashkil qiladi. Agar omadimiz kelib takrorlanuvchi so'zlar bo'lsa n ta emas 1 ta ham bo'lishi mumkin.
@@ -290,23 +278,40 @@ Yuqorida ko'rib turganingizdek array ichida takrorlanmaydigan so'zlar bo'lsa **w
 
 ### **Quadratic Space**
 
-```python
-def generate_pairs(arr : list) -> list:
-    pairs = []
-    
-    for i in range(len(arr)):
-        for j in range(len(arr)):
-            pairs.append((arr[i], arr[j]))
-            
+```go
+package main
+
+import "fmt"
+
+func generate_pairs(arr []int) []struct{first, second int} {
+    pairs := []struct{first, second int}{}
+    for _, i := range arr {
+        for _, j := range arr {
+            pairs = append(pairs, struct{first, second int}{i, j})
+        }
+    }
     return pairs
+}
+
+func print_pairs(pairs []struct{first, second int}) {
+    for _, pair := range pairs {
+        fmt.Printf("(%d, %d)\n", pair.first, pair.second)
+    }
+}
+
+func main() {
+    arr := []int{1, 2, 3}
+    pairs := generate_pairs(arr)
+    print_pairs(pairs)
+}
 ```
 
 Yuqoridagi funksiya list ichidagi har bir elementni sherik qilib `pairs` degan yangi listga qo'shib boradi.
 
-```python
+```go
 generate_pairs([1, 2, 3])
 
-# Output: [(3, 3), (3, 6), (3, 9), (6, 3), (6, 6), (6, 9), (9, 3), (9, 6), (9, 9)]
+// Output: [(3, 3), (3, 6), (3, 9), (6, 3), (6, 6), (6, 9), (9, 3), (9, 6), (9, 9)]
 ```
 
 Ko'rib turibsizki listimiz hajmi qancha kattalashsa qaytariladigan qiymat soni ham uning kvadratiga teng bo'ladi. Yuqoridagi misolda bizning listimizda 3 ta element bor edi ammo funksiya qaytargan yangi list esa 9ta elementdan iborat bo'ldi. Shuning uchun ham biz uni <code>O(n<sup>2</sup>)</code> deb o'lchaymiz.
