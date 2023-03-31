@@ -83,12 +83,6 @@ Constant - o'zgarmas degan ma'noni anglatadi. Matematikada konstant qiymat nimad
 fn access_element<T>(arr: &[T], index: usize) -> &T {
     &arr[index]
 }
-
-fn main() {
-    let arr = [1, 2, 3, 4, 5];
-    let index = 2;
-    println!("{}", access_element(&arr, index));
-}
 ```
 
 Yuqorida keltirilgan kodda bizning `access_element` funksyamizga istalgan kattalikda input bermaylik u bu ishni qilishga bir xil vaqt sarflaydi. Ya'ni operatsiyalar soni bu yerda 1ta. 
@@ -96,11 +90,6 @@ Yuqorida keltirilgan kodda bizning `access_element` funksyamizga istalgan kattal
 ```rust
 fn sum_of_squares(n: i32) -> i32 {
     (n * (n + 1) * (2 * n + 1)) / 6
-}
-
-fn main() {
-    let n = 5;
-    println!("{}", sum_of_squares(n));
 }
 ```
 
@@ -122,11 +111,6 @@ fn summing(numbers: &[i32]) -> i32 {
     }
     result
 }
-
-fn main() {
-    let numbers = [1, 2, 3, 4, 5];
-    println!("{}", summing(&numbers));
-}
 ```
 
 Yuqoridagi kodda tasvirlanganidek biz `result` degan o'zgaruvchi ochib uni 0ga tenglashtirdik. Va keyin for loop orqali, funksiyaga beriladigan list qiymatini iteratsiya qilamiz. Iteratsiya har bir raqamni `result` o'zgaruvchisizga increment qilib borayabdi va oxirida esa uni qaytarayabdi. 
@@ -147,11 +131,6 @@ fn numered_num(num: i32) {
         }
     }
 }
-
-fn main() {
-    let num = 3;
-    numered_num(num);
-}
 ```
 
 Yuqorida keltirilgan kodda nested-loop tasvirlangan. Biz funksiyaga necha qiymatni bersak u o'sha qiymatni kvadratichalik ko'p operatsiya bajaradi. Agar biz unga 2 ni kiritsak u 4 ta operatsiya qiladi, agar 5 ni kiritsak u 25 ta operatsiya bajaradi. Demak biz uni <code>O(n<sup>2</sup>)</code> 
@@ -170,11 +149,6 @@ fn summing(nums: &[i32]) -> i32 {
     }
     result
 }
-
-fn main() {
-    let nums = [1, 2, 3, 4, 5];
-    println!("{}", summing(&nums));
-}
 ```
 
 Yuqorida keltirilgan kodning **space complexity**si `O(1)`. Sababi bizning funksiyamiz 100 ta elementli listga ham 1 000 000 000 elementli listga ham bir xil ishlaydi. Operatsiyalar soni ko'p bo'lgani bilan biz barchasini faqat bitta `result` degan o'zgaruvchiga saqlayabmiz.
@@ -190,12 +164,6 @@ fn sum_odds_evens(nums: &[i32]) -> String {
         }
     }
     format!("odds = {}, evens = {}", odds, evens)
-}
-
-fn main() {
-    let nums = [1, 2, 3, 4, 5, 6];
-    let result = sum_odds_evens(&nums);
-    println!("{}", result);
 }
 ```
 
@@ -214,23 +182,6 @@ fn count_frequency(nums: &[i32]) -> HashMap<i32, i32> {
         *freq_dict.entry(*num).or_insert(0) += 1;
     }
     freq_dict
-}
-
-fn print_dict(dict: &HashMap<i32, i32>) {
-    print!("{ ", );
-    for (key, value) in dict.iter().sorted_by_key(|(k, _)| *k) {
-        print!("{}: {}", key, value);
-        if key != dict.keys().max().unwrap() {
-            print!(", ");
-        }
-    }
-    println!(" }}");
-}
-
-fn main() {
-    let arr = [1, 2, 2, 3, 3, 3];
-    let freq_dict = count_frequency(&arr);
-    print_dict(&freq_dict);
 }
 ```
 
@@ -257,18 +208,6 @@ fn generate_pairs(arr: &[i32]) -> Vec<(i32, i32)> {
         }
     }
     pairs
-}
-
-fn print_pairs(pairs: &[(i32, i32)]) {
-    for pair in pairs {
-        println!("({}, {})", pair.0, pair.1);
-    }
-}
-
-fn main() {
-    let arr = [1, 2, 3];
-    let pairs = generate_pairs(&arr);
-    print_pairs(&pairs);
 }
 ```
 
