@@ -51,12 +51,6 @@ class Program {
         }
         return result;
     }
-
-    static void Main(string[] args) {
-        List<int> arry = new List<int> {1, 2, 3, 4, 5, 6};
-        List<int> result = Juftlar(arry);
-        Console.WriteLine(string.Join(" ", result));
-    }
 }
 ```
 
@@ -97,11 +91,6 @@ class Program {
     static int sum_of_squares(int n) {
         return (n * (n + 1) * (2 * n + 1)) / 6;
     }
-
-    static void Main(string[] args) {
-        int n = 5;
-        Console.WriteLine(sum_of_squares(n));
-    }
 }
 ```
 
@@ -113,11 +102,6 @@ using System;
 class Program {
     static int sum_of_squares(int n) {
         return (n * (n + 1) * (2 * n + 1)) / 6;
-    }
-
-    static void Main(string[] args) {
-        int n = 5;
-        Console.WriteLine(sum_of_squares(n));
     }
 }
 
@@ -145,11 +129,6 @@ class Program {
         }
         return result;
     }
-
-    static void Main(string[] args) {
-        int[] numbers = {1, 2, 3, 4, 5};
-        Console.WriteLine(summing(numbers));
-    }
 }
 ```
 
@@ -174,11 +153,6 @@ class Program {
             }
         }
     }
-
-    static void Main(string[] args) {
-        int num = 3;
-        numered_num(num);
-    }
 }
 ```
 
@@ -202,11 +176,6 @@ class Program {
         }
         return result;
     }
-
-    static void Main(string[] args) {
-        int[] nums = {1, 2, 3, 4, 5};
-        Console.WriteLine(summing(nums));
-    }
 }
 ```
 
@@ -228,11 +197,6 @@ class Program {
             }
         }
         Console.WriteLine($"odds = {odds}, evens = {evens}");
-    }
-
-    static void Main(string[] args) {
-        int[] nums = {1, 2, 3, 4, 5};
-        sum_odds_evens(nums);
     }
 }
 ```
@@ -260,15 +224,13 @@ class Program {
         }
         return freq_dict;
     }
-
-    static void Main(string[] args) {
-        int[] arr = {
+}
 ```
 
 Bu funksiya berilgan list ichida takrorlangan elementlar sonini sanaydi. Keling pastda qiymat berib ko'ramiz va berilgan qiymatga u qanday javob berishini Output orqali ifodalaymiz.
 
 ```csharp
-count_frequency(["apple", "banana", "apple", "orange", "apple"])
+// Input: ["apple", "banana", "apple", "orange", "apple"]
 
 // Output: {'apple': 3, 'banana': 1, 'orange': 1}
 ```
@@ -293,21 +255,13 @@ class Program {
         }
         return pairs;
     }
-
-    static void Main(string[] args) {
-        List<int> arr = new List<int> {1, 2, 3};
-        List<Tuple<int, int>> pairs = GeneratePairs(arr);
-        foreach (Tuple<int, int> p in pairs) {
-            Console.WriteLine($"({p.Item1}, {p.Item2})");
-        }
-    }
 }
 ```
 
 Yuqoridagi funksiya list ichidagi har bir elementni sherik qilib `pairs` degan yangi listga qo'shib boradi.
 
 ```csharp
-generate_pairs([1, 2, 3])
+// Input: [1, 2, 3]
 
 // Output: [(3, 3), (3, 6), (3, 9), (6, 3), (6, 6), (6, 9), (9, 3), (9, 6), (9, 9)]
 ```
